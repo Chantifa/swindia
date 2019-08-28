@@ -18,7 +18,13 @@ h6 {
 
     font-family: 'Roboto Slab', Georgia, Times, 'Times New Roman', serif;
 }
-
+div ul li {
+        font-size:1em;
+         list-style: none;
+         float: center;
+         position: inherent;
+         margin: 12px 50px 50px;
+}
 blockquote {
 
     font-style: italic;
@@ -163,7 +169,16 @@ nav .icon {
     }
 }
 
+/*about*/
+#about div . {
+        float: center;
+         position: inherent;
+         margin: 12px 50px 50px;
+
+}
+
 /* Main */
+
 
 main {
     padding: 25px;
