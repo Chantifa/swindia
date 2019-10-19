@@ -86,7 +86,6 @@ function validateFeedback() {
 function validateDemand() {
     let messageDemand = document.getElementsByClassName('message-demand');
     let inputDemand = document.getElementById('demand');
-    let options = document.getElementById('options'.value);
 
     if (inputDemand.value == '') {
         messageDemand.innerHTML = 'Please enter your questions';
@@ -94,28 +93,41 @@ function validateDemand() {
     } else if (inputDemand.value.length <= 50) {
         messageDemand.innerHTML = 'Please write more than 50 characters';
         isFormValid = false;
-    } else if (options.value = ''){
-        messageDemand.innerHTML = 'Please add your options you can select more than one'
     } else {
         messageDemand.innerHTML = '';
     }
 }
 
+function validateOptions(){
+    let messageDemand = document.getElementsByClassName('message-demand');
+    let options = document.getElementById('options'.value);
+
+    if (options.value = ''){
+            messageDemand.innerHTML = 'Please add your options you can select more than one'
+        }
+    else {
+            messageDemand.innerHTML = '';
+        }
+}
+
+// Submit button wird per default deaktiviert.
+var submit = document.getElementsById('submitDemand');
+submit.disabled = true;
+
 // Alle Felder werden nacheinander validiert und dann entsprechend der submit button aktiviert (oder deaktiviert)
 function validateForm() {
     isFormValid = true;
 
-    validateQuality();
-    validateView();
     validateName();
     validateEmail();
-    validateFeedback();
     validateDemand();
+    validateOptions();
 
     if (isFormValid) {
         submit.disabled = false;
     } else {
         submit.disabled = true;
+
     }
 }
 
@@ -125,7 +137,3 @@ inputFields.forEach(function (element) {
     element.addEventListener('change', validateForm);
     element.addEventListener('keyup', validateForm);
 });
-
-// Submit button wird per default deaktiviert.
-var submit = document.getElementsByClassName('submit');
-submit.disabled = true;

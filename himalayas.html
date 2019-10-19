@@ -40,7 +40,86 @@
 <main>
     <div id="message"></div>
     <h1>Himalayas</h1>
-    <h2>coming soon!</h2>
+    <ul class="article" id="himalyas">
+    <li>
+        <form action="https://formsubmit.co/info@swindiatours.com" method="POST">
+            <label style="font-size: 1.5em">Please enter your contact information</label>
+            <div id="message-view"></div>
+            <label for="name">Your name</label>
+            <input name="name" id="name" required>
+            <div id="message-name"></div>
+            <label for="mobile">mobile</label>
+            <input mobile="mobile" id="mobile" required>
+            <label for="email">Your e-mail address</label>
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" required>
+            <div id="message-email"></div>
+            <label for="demand">please submit your demand to get a proper offer</label>
+            <div>
+                <select name="options" id="options" size="5" multiple required >
+                    <option value="Manali">Manali</option>
+                    <option value="Shimla">Shimla</option>
+                    <option value="Dharamsala">Dharamsala</option>
+                    <option value="Dalhousie">Dalhousi</option>
+                    <option value="Naina Devi">Naina Devi</option>
+                </select>
+                <p class="price">price depend on the request</p>
+            </div>
+            <textarea cols="50" id="demand" name="demand" required></textarea>
+            <div id="message-demand"></div>
+            <input onclick="validateDemand()" type="submit" value="Send-request" id="submitDemand">
+            <div id="message-submit"></div>
+        </form>
+    </li>
+    <li>
+        <img src="img/HP/Hadimba_Devi_Temple,_Manali.png" alt="Manali" width="300" />
+        <h2>Manali</h2>
+        <small>
+            <a href="https://en.wikipedia.org/wiki/Manali,_Himachal_Pradesh">Manali is a resort town nestled in the mountains of the Indian state of Himachal Pradesh near the northern end of the Kullu Valley in the Beas River Valley.
+                 It is located in the Kullu district, about 270 km north of the state capital, Shimla, 309
+                km north east of Chandigarh and 544 km northeast of Delhi, the national capital.
+                The small town, with a population of 8,096,[1] is the beginning of an ancient trade route to Ladakh and from there over the Karakoram Pass on to Yarkand and Khotan in the Tarim Basin.
+                It is a popular tourist destination and serves as the gateway to Lahaul and Spiti district as well as Leh.</a>
+        </small>
+    </li>
+    <li>
+        <img src="img\HP\Shimla.png" alt="Shimla" width="300" />
+        <h2>Shimla</h2>
+        <small>
+            <a href="https://en.wikipedia.org/wiki/Shimla">Shimla, also known as Simla, is the capital and the
+                largest city of the Indian state of Himachal Pradesh. In 1864, Shimla was declared as the summer
+                capital of British India, succeeding Murree, northeast of Rawalpindi. After independence,
+                the city became the capital of Punjab and was later made the capital of Himachal Pradesh.
+                It is the principal commercial, cultural and educational centre of the state</a>
+        </small>
+    </li>
+    <li>
+        <img src="img/HP/dharamsala.png" alt="Shrinagar"width="300" />
+        <h2>Dharamsala</h2>
+        <small ><a href="https://en.wikipedia.org/wiki/Dharamshala">Dharamshala (also spelled Dharamsala) is the district headquarters of Kangra district in India.
+            It was formerly known as Bhagsu.
+            The Dalai Lama's residence and the headquarters of the Central Tibetan Administration (the Tibetan government in exile) are in Dharamshala.</a>
+        </small>
+    </li>
+    <li>
+        <img src="img/HP/Dalhousie.png" alt="Dalhousie" width="300" />
+        <h2>Dalhousie</h2>
+        <small ><a href="https://en.wikipedia.org/wiki/Gulmarg"/>Dalhousie is a hill station in Chamba district,
+            in the northern Indian state of Himachal Pradesh. It is situated on 5 hills and has an elevation of 1,970 metres above sea level.
+            Dalhousie Town was named after The Earl of Dalhousie, who was the British Governor-General in India while establishing this place as a summer retreat</a>
+        </small>
+    </li>
+    <li>
+        <img src="img/HP/naina_devi.png" alt="Naina Devi"width="300" />
+        <h2>Naina Devi</h2>
+        <small>
+            <a href="https://en.wikipedia.org/wiki/Naina_Devi"/>The Temple of Shri Naina Devi Ji is situated on a hilltop,
+            base of which also has samadhi of bhagat Jatt Jeona Morh, in the Bilaspur District, Himachal Pradesh, India.
+            The temple is connected with National Highway No. 21. The temple at the top of the hill can be reached via road
+            (that curves round the hill up to a certain point) and then by concrete steps (that finally reach the top).
+             There is also a cable car facility that moves pilgrims from the base of the hill all the way to the top.</a>
+        </small>
+    </li>
+</ul>
 </main>
 <footer>
     <div id="opening-hours">
