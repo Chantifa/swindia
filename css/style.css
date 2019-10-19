@@ -517,6 +517,9 @@ ul.article-madhyapradesh small {
 .form #message-name {
     grid-column-start: 2;
 }
+.form #message-mobile {
+    grid-column-start: 2;
+}
 
 .form #message-email {
     grid-column-start: 2;
