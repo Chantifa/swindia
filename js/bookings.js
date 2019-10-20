@@ -1,5 +1,27 @@
-// https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
 
+
+/*
+Phone number verfication code
+*/
+import phoneUtil
+
+var phoneUtil = require('google-libphonenumber').phoneUtil;
+var tel = phoneUtil.parse('+12024561111');
+var phoneUtil = require('google-libphonenumber').phoneUtil
+        , PNF = require('google-libphonenumber').PhoneNumberFormat
+        , PNT = require('google-libphonenumber').PhoneNumberType;
+var tel = phoneUtil.parse('(0) 20 7925 0918', 'GB');
+console.log(phoneUtil.format(tel, PNF.INTERNATIONAL));
+console.log(phoneUtil.format(tel, PNF.NATIONAL));
+console.log(phoneUtil.format(tel, PNF.E164));
+
+console.log(phoneUtil.isValidNumber(phoneUtil.parse('(0) 20 7925 0918', 'GB')));
+// => outputs true
+
+
+
+
+// https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
 function menuOnAndOff() {
     var x = document.getElementById('topnav');
     if (x.className === 'responsive') {
@@ -137,3 +159,4 @@ inputFields.forEach(function (element) {
     element.addEventListener('change', validateForm);
     element.addEventListener('keyup', validateForm);
 });
+
