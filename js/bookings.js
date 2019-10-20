@@ -3,7 +3,7 @@
 /*
 Phone number verfication code
 */
-import phoneUtil
+@import phoneUtil
 
 var phoneUtil = require('google-libphonenumber').phoneUtil;
 var tel = phoneUtil.parse('+12024561111');
