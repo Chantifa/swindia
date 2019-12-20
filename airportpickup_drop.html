@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+<<head>
     <meta charset="UTF-8">
     <title>SwIndia Tours – Taxi Services and Tour Bookings</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29354477-2"></script>
     <script>
@@ -15,12 +12,25 @@
 
         gtag('config', 'UA-29354477-2', { 'optimize_id': 'GTM-NVK5K9R'});
     </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34038602-2"></script>
+    <!-- Google AdSense wurde hier hinzugefügt-->
+    <script data-ad-client="ca-pub-1468017671046742" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34038602-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-34038602-2');
+    </script>
+
 </head>
-
 <body>
-
 <div id="topbar">  <img src="img/logo.png" class="img_logo" alt="SwIndiaTours" width="300" /></div>
-
 <header>
 
     <a href="index.html" class="logo">Taxi Services & <br> Tour Bookings</a>
@@ -57,14 +67,15 @@
             <label style="font-size: 1.5em">Please enter your contact information</label>
             <div id="message-view"></div>
             <label for="name">Your name</label>
-            <input name="name" id="name" required>
+            <input name="name" id="name" required><?php echo isset ($fields['name'])? e($fields['name']):''?>
             <div id="message-name"></div>
             <label for="mobile">mobile</label>
             <input type="tel" id="mobile" name="mobile" placeholder="+91-98-992-933-13-8"
                     pattern="[\+]\d{1,2}[\(]\d{2,3}[\)]\d{2,3,4,5,6}[\-]\d{1,2,3,4,5,6}" required>
             <div id="message-mobile"></div>
             <label for="email">Your e-mail address</label>
-            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" required>
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email"
+                   required>
             <div id="message-email"></div>
             <label for="demand">please submit your demand to get a proper offer</label>
         <div>
@@ -76,7 +87,7 @@
         </div>
         <textarea cols="50" id="demand" name="demand" required></textarea>
         <div id="message-demand"></div>
-        <input onclick="order" type="submit" value="Send-request" id="submitDemand">
+            <input onclick="validateDemand()" type="submit" value="Send-request" id="submitDemand">
         <div id="message-submit"></div>
     </form>
     </li>
@@ -118,6 +129,5 @@
 </footer>
 <script src="js/bookings.js"></script>
 <script src="js/ajax.js"></script>
-<script src="js/form_validator.js"></script>
 </body>
 </html>
