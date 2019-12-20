@@ -1,0 +1,663 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,400i,700');
+
+body {
+
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: 'Roboto Slab', Georgia, Times, 'Times New Roman', serif;
+}
+div ul li {
+        font-size:1em;
+         list-style: none;
+         float: center;
+         position: inherent;
+         margin: 12px 50px 50px;
+}
+blockquote {
+
+    font-style: italic;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.form form>label {
+    font-weight: 700;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+img {
+    object-fit: cover;
+}
+
+
+/* Colors */
+
+header {
+    background-color: #591829;
+}
+
+body,
+footer {
+    background-color: #1A2624;
+}
+
+header,
+header a,
+footer,
+footer a {
+    color: #ffffff;
+}
+
+#topbar,
+main {
+    background-color: #ffffff
+}
+
+h2 {
+    color: #591829;
+}
+
+/* Header */
+
+
+#topbar {
+    padding: 5px 20px;
+}
+
+header {
+    padding: 20px;
+    height: 50px;
+    position: relative;
+}
+
+header a .logo {
+    display: block;
+    position: relative ;
+    top: 0;
+    left: 0;
+    float: left;
+}
+nav ul {
+    padding-left: 0;
+    list-style: none;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    padding: 25px 10px;
+    float: left;
+    height: 20px;
+}
+
+nav ul li a:not(.icon):hover {
+    background-color: #92A4A6;
+}
+
+nav ul li a.icon:hover {
+    color: #92A4A6;
+}
+
+nav .active {
+    background: #92A4A6;
+}
+
+nav .icon {
+    display: none;
+    padding: 25px 25px;
+}
+
+@media screen and (max-width: 600px) {
+
+    nav a:not(.active) {
+        display: none;
+    }
+
+    nav a.icon {
+        float: right;
+        display: block;
+    }
+
+    nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    nav.responsive ul li {
+        background-color: #9fc5f8;
+    }
+
+    nav.responsive ul li {
+        display: block;
+        width: 100vw;
+    }
+
+    nav.responsive ul li a {
+        float: none;
+        display: block;
+    }
+}
+
+/*about*/
+#about div . {
+        float: center;
+         position: inherent;
+         margin: 12px 50px 50px;
+
+}
+
+/* Main */
+
+
+main {
+    padding: 25px;
+}
+
+ul.intro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    padding-left: 0;
+    list-style: none;
+}
+
+@media screen and (max-width: 1000px) {
+    ul.intro {
+        grid-template-columns: 1fr;
+    }
+}
+
+ul.intro a {
+    display: block;
+    position: relative;
+}
+
+ul.intro h2 {
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    font-size: 2em;
+    text-transform: uppercase;
+
+    /* Positionierung auf dem Bild */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* Text Zentrierung */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_SwIndiaTours {
+    height: 350px;
+    width: 100%;
+    display: block;
+    margin: 0px auto 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/***********************
+  Versuchen wir es doch hier mit einem Grid. Wir könnten diese Auflistung (sei es von Soft Drinks, Pizzen oder Salate) auch mit der Flexbox und sicher noch auf andere Arten lösen.
+***********************/
+
+ul.article {
+    display: grid;
+
+    /***********************
+      Umso fauler, umso besser. Statt '1fr 1fr 1fr 1fr' zu schreiben, kann man auch die 'repeat()' Funktion vo CSS verwenden.
+    ***********************/
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.article li {
+    width: 300px;
+}
+
+/***********************
+  Ich hab hier mal eine Grösse für die Bilder definiert. Die Überschreiben die Grösse der Bilder im HTML. Da 300 x 300 Pixel quadratisch ist, aber nicht alle Bilder quadratisch sind, werden sie verzogen.
+
+  Entweder bearbeiten wir alle Bilder, dass sie quadratisch sind oder wir finden eine andere Lösung.
+***********************/
+
+ul.article li img {
+    height: 300px;
+    width: 300px;
+}
+
+ul.article li h2 {
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+/***********************
+  Trolley-Piktorgramme:
+***********************/
+
+ul.article li a img {
+    height: 25px;
+    width: 25px;
+}
+
+div ul.article li img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+ul.article div {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+ul.article div div .request-offer {
+    flex-grow: 3;
+    text-align: right;
+}
+
+ul.article div .price {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+ul.article small {
+    display: block;
+    padding-bottom: 2em;
+}
+
+/*************************
+Article mix tours
+ */
+ul.article-mix {
+    display: grid;
+
+    /***********************
+      Umso fauler, umso besser. Statt '1fr 1fr 1fr 1fr' zu schreiben, kann man auch die 'repeat()' Funktion vo CSS verwenden.
+    ***********************/
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.article-mix li {
+    width: 300px;
+}
+
+/***********************
+  Ich hab hier mal eine Grösse für die Bilder definiert. Die Überschreiben die Grösse der Bilder im HTML. Da 300 x 300 Pixel quadratisch ist, aber nicht alle Bilder quadratisch sind, werden sie verzogen.
+
+  Entweder bearbeiten wir alle Bilder, dass sie quadratisch sind oder wir finden eine andere Lösung.
+***********************/
+
+ul.article-mix li img {
+    height: 300px;
+    width: 300px;
+}
+
+ul.article-mix li h2 {
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+/***********************
+  Trolley-Piktorgramme:
+***********************/
+
+ul.article-mix li a img {
+    height: 25px;
+    width: 25px;
+}
+
+div ul.article-mix li img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+ul.article-mix div {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+ul.article-mix div div .request-offer {
+    flex-grow: 3;
+    text-align: right;
+}
+
+ul.article-mix div .price {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+ul.article-mix small {
+    display: block;
+    padding-bottom: 2em;
+}
+
+/*************************
+Article madhyapradesh
+ */
+ul.article-madhyapradesh {
+    display: grid;
+
+    /***********************
+      Umso fauler, umso besser. Statt '1fr 1fr 1fr 1fr' zu schreiben, kann man auch die 'repeat()' Funktion vo CSS verwenden.
+    ***********************/
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.article-madhyapradesh li {
+    width: 300px;
+}
+
+/***********************
+  Ich hab hier mal eine Grösse für die Bilder definiert. Die Überschreiben die Grösse der Bilder im HTML. Da 300 x 300 Pixel quadratisch ist, aber nicht alle Bilder quadratisch sind, werden sie verzogen.
+
+  Entweder bearbeiten wir alle Bilder, dass sie quadratisch sind oder wir finden eine andere Lösung.
+***********************/
+
+ul.article-madhyapradesh li img {
+    height: 300px;
+    width: 300px;
+}
+
+ul.article-madhyapradesh li h2 {
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+/***********************
+  Trolley-Piktorgramme:
+***********************/
+
+ul.article-madhyapradesh li a img {
+    height: 25px;
+    width: 25px;
+}
+
+div ul.article-madhyapradesh li img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+ul.article-madhyapradesh div {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+ul.article-madhyapradesh div div .request-offer {
+    flex-grow: 3;
+    text-align: right;
+}
+
+ul.article-madhyapradesh div .price {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+ul.article-madhyapradesh small {
+    display: block;
+    padding-bottom: 2em;
+}
+/***********************
+  Da es bei kleineren Bildschirmgrössen nicht mit 4 Spalten geht, hier ein paar Media Queries, die die Spaltenanzahl verringern:
+***********************/
+
+@media screen and (max-width: 1280px) {
+    ul.article {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    ul.article-madhyapradesh{
+        grid-template-columns: repeat(3, 1fr);
+    }
+     ul.article-madhyapradesh{
+            grid-template-columns: repeat(3, 1fr);
+        }
+}
+
+@media screen and (max-width: 1350px) {
+    .logo {
+        display: none;
+    }
+
+    ul.article {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul.article-mix{
+        grid-template-columns: repeat(2, 1fr);
+    }
+     ul.article-madhyapradesh{
+            grid-template-columns: repeat(2, 1fr);
+        }
+}
+
+@media screen and (max-width: 660px) {
+    .logo {
+        display: none;
+    }
+    ul.article {
+        grid-template-columns: 1fr;
+    }
+    ul.article-mix {
+        grid-template-columns: 1fr;
+    }
+        ul.article-madhyapradesh {
+            grid-template-columns: 1fr;
+        }
+}
+
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.form #message-name {
+    grid-column-start: 2;
+}
+.form #message-mobile {
+    grid-column-start: 2;
+}
+
+.form #message-email {
+    grid-column-start: 2;
+}
+
+.form #contact {
+    text-align: center;
+    grid-template-columns: 1fr ;
+}
+
+.form form {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-gap: .5em 1em;
+}
+
+.form label {
+    text-align: right;
+}
+
+.form fieldset {
+    border: none;
+}
+
+.form fieldset label {
+    margin: 0 10px 0 2px;
+}
+
+.form textarea {
+    height: 150px;
+}
+
+.form .submit {
+    grid-column-start: 2;
+    justify-self: end;
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+
+    }
+    .form form {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+
+    .form form>label {
+        text-align: left;
+        margin: 10px 0 2px;
+    }
+
+    .form #submit {
+        grid-column-start: 1;
+    }
+    .form #submitfeedback {
+        grid-column-start: 1;
+    }
+    .form #submitDemand {
+        grid-column-start: 1;
+    }
+}
+
+div[id="message"] {
+    color: red;
+    grid-column-start: 2;
+    margin-bottom: 5px;
+}
+
+
+footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer div {
+    padding: 0 25px 0 0;
+}
+
+footer div:last-child {
+    padding: 0;
+}
+
+footer #opening-hours,
+footer #address {
+    flex-basis: 25%;
+}
+
+footer #quote {
+    flex-basis: 50%;
+}
+
+footer #quote blockquote,
+footer #quote cite {
+    display: inline;
+}
+
+footer h3 {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+    footer {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    footer #opening-hours,
+    footer #quote,
+    footer #address {
+        padding: 0 0 20px;
+        flex-basis: 50%;
+    }
+
+    footer #quote {
+        flex-basis: 100%;
+        order: 2;
+    }
+}
+
+/* Feedback Tables */
+
+#statistic {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#statistic table {
+    margin: 10px;
+    padding: 10px;
+    background-color: #92A4A6;
+}
+
+#statistic table tr > :nth-child(2n) {
+    padding-left: 10px;
+    text-align: right;
+}
