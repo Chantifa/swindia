@@ -76,7 +76,7 @@
                      <div id="message-email"></div>
                      <label for="demand">please submit your demand to get a proper offer</label>
                     <div>
-                        <select name="Delhi City Tour" size="9" multiple required>
+                        <select name="options"  id="options" size="9" multiple required>
                             <option value="Laxmi Narayan Temple">Laxmi Narayan Temple </option>
                             <option value="India Gate">India Gate</option>
                             <option value="President house & parlament">President House & Parlament</option>
@@ -91,7 +91,7 @@
                     </div>
                      <textarea cols="50" id="demand" name="demand" required></textarea>
                      <div id="message-demand"></div>
-                     <input onclick="order" type="submit" value="Send-request" id="submitDemand">
+                     <input onclick="validateDemand()" type="submit" value="Send-request" id="submitDemand">
                      <div id="message-submit"></div>
                 </form>
              </li>

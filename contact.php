@@ -1,7 +1,7 @@
 <?php
     $name = strip_tags(trim($_POST["name"]));
     $email = strip_tags(trim($_POST["email"]));
-    $options = strip_tags(trim($_POST["options"])
+    $option = strip_tags(trim($_POST["option"])
     $message = strip_tags(trim($_POST["message"]));
 
     if (empty($name)) {
@@ -35,7 +35,7 @@
     $mail->ContentType = "text/html";
     $mail->addAddress("email@email.com", "Name");
     $mail->Subject = "Mail subject";
-    $mail->Body = "test message";
+    $mail->Body = "options", "test message";
 
     if($mail->Send()) {
 
