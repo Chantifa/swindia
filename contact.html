@@ -1,3 +1,4 @@
+<?php include('contactform.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,25 +62,29 @@
 <div id="message"></div>
 <main>
     <h1>Do you have any questions or do you need any assistance, we are happy to help</h1>
-    <div class="form">
-        <form action="https://formsubmit.co/info@swindiatours.com" method="POST">
-            <label id="contact" style="font-size: 1.5em">Please enter your contact information</label>
-            <div id="message-view"></div>
-            <label for="name">Your complete name</label>
-            <input name="name" id="name" required>
-            <div id="message-name"></div>
-            <label for="mobile">mobile</label>
-            <input type="tel" id="mobile" name="mobile" placeholder="+91-98-992-933-13-8"
-                    pattern="[\+]\d{1,2}[\(]\d{2,3}[\)]\d{2,3,4,5,6}[\-]\d{1,2,3,4,5,6}" required>
-            <div id="message-mobile"></div>
-            <label for="email">Your e-mail address</label>
-            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" required>
-            <div id="message-email"></div>
-            <label for="demand">Please enter your question</label>
-            <textarea cols="50" id="demand" name="demand" required></textarea>
-            <div id="message-demand"></div>
-            <input onclick="validateDemand()" type="submit" value="Send-request" id="submitDemand">
-            <div id="message-submit"></div>
+    <div class="container">
+        <form id="contact" action="<?=$_SERVER['PHP_SELF'];?>" method="post">
+            <h4>Contact us today, and get reply with in 24 hours!</h4>
+            <fieldset>
+                <input placeholder="Your name" type="text" name="name" tabindex="1" value="<?= $name ?>" autofocus>
+                <span class="error"><?= $name_error ?></span>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Email Address" type="email" name="email" value="<?= $email ?>" tabindex="2" >
+                <span class="error"><?= $email_error ?></span>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Phone Number" type="tel" name="phone" value="<?= $phone ?>" tabindex="3" >
+                <span class="error"><?= $phone_error ?></span>
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Type your Message Here...." name="message" tabindex="5"
+                          value="<?= $message ?>"></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+            <div class ="success"><?= $success; ?></div>
         </form>
     </div>
 </main>
