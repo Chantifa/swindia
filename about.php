@@ -1,4 +1,4 @@
-<?php include('contactform.php'); ?>
+<?php ?>
 
 <!DOCTYPE html>
 <html lang="en">

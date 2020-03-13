@@ -1,4 +1,4 @@
-<?php include('contactform.php'); ?>
+<?php include('formtours.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29354477-2"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
@@ -22,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34038602-2"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
@@ -30,7 +30,6 @@
     </script>
 
 </head>
-
 <body>
 
 <div id="topbar">  <img src="img/logo.png" class="img_logo" alt="SwIndiaTours" width="300" /></div>
@@ -59,34 +58,12 @@
         </ul>
     </nav>
 </header>
-<div id="message"></div>
+
 <main>
-    <h1>Do you have any questions or do you need any assistance, we are happy to help</h1>
-    <div class="container">
-        <form id="contact" action="<?=$_SERVER['PHP_SELF'];?>" method="post">
-            <h4>Contact us today, and get reply with in 24 hours!</h4>
-            <fieldset>
-                <input placeholder="Your name" type="text" name="name" tabindex="1" value="<?= $name ?>" autofocus>
-                <span class="error"><?= $name_error ?></span>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Your Email Address" type="email" name="email" value="<?= $email ?>" tabindex="2" >
-                <span class="error"><?= $email_error ?></span>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Your Phone Number" type="tel" name="phone" value="<?= $phone ?>" tabindex="3" >
-                <span class="error"><?= $phone_error ?></span>
-            </fieldset>
-            <fieldset>
-                <textarea placeholder="Type your Message Here...." name="message" tabindex="5"
-                          value="<?= $message ?>"></textarea>
-            </fieldset>
-            <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-            </fieldset>
-            <div class ="success"><?= $success; ?></div>
-        </form>
-    </div>
+    <div id="message"></div>
+    <h1>Goa</h1>
+    <ul class="article" id="goa"></ul>
+    <h2>coming soon!</h2>
 </main>
 <footer>
     <div id="opening-hours">
@@ -105,8 +82,8 @@
     </div>
     <div id="quote">
         <blockquote>
-            An experience I will never forget, so lovely people and let you feel that you are a part of the country. I got the real taste of India.
-            Definitely I will come back again. SwIndia Tours took care about everything, thank you so much.
+An experience I will never forget, so lovely people and let you feel that you are a part of the country. I got the real taste of India.
+Definitely I will come back again. SwIndia Tours took care about everything, thank you so much.
         </blockquote>
         <cite>– Hanna (Sweden)</cite>
     </div>
@@ -120,10 +97,11 @@
         <p>+91 98 99293313</p>
     </div>
     <div>
-        Copyright Ⓒ 2019 SwIndia Tours. All Right Reserved
-    </div>
+Copyright Ⓒ 2019 SwIndia Tours. All Right Reserved
+</div>
 </footer>
 <script src="js/bookings.js"></script>
 <script src="js/ajax.js"></script>
 </body>
 </html>
+
