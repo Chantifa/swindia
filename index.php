@@ -37,22 +37,22 @@ window.dataLayer = window.dataLayer || [];
 
 <header>
 
-    <a href="index.html" class="logo">Taxi Services & <br> Tour Bookings</a>
+    <a href="index.php" class="logo">Taxi Services & <br> Tour Bookings</a>
 
     <nav id="topnav">
         <ul>
-            <li><a href="airportpickup_drop.html">Airport pickup & drop</a></li>
-            <li><a href="delhi.html">Delhi</a></li>
-            <li><a href="punjab.html">Punjab</a></li>
-            <li><a href="rajasthan.html">Rajasthan</a></li>
-            <li><a href="uttarpradesh.html">Uttarpradesh</a></li>
-            <li><a href="mix.html">Mix Tours</a></li>
-            <li><a href="uttrakhand.html">Uttarkhand</a></li>
-            <li><a href="kashmir.html">Kashmir</a></li>
-            <li><a href="himalayas.html">Himalayas</a></li>
-            <li><a href="madhyapradesh.html">Madhyapradesh</a></li>
-            <li><a href="goa.html">Goa</a></li>
-            <li><a href="outsideIndia.html">Outside India</a></li>
+            <li><a href="airportpickup_drop.php">Airport pickup & drop</a></li>
+            <li><a href="delhi.php">Delhi</a></li>
+            <li><a href="punjab.php">Punjab</a></li>
+            <li><a href="rajasthan.php">Rajasthan</a></li>
+            <li><a href="uttarpradesh.php">Uttarpradesh</a></li>
+            <li><a href="mix.php">Mix Tours</a></li>
+            <li><a href="uttrakhand.php">Uttarkhand</a></li>
+            <li><a href="kashmir.php">Kashmir</a></li>
+            <li><a href="himalayas.php">Himalayas</a></li>
+            <li><a href="madhyapradesh.php">Madhyapradesh</a></li>
+            <li><a href="goa.php">Goa</a></li>
+            <li><a href="outsideIndia.php">Outside India</a></li>
             <li><a href="javascript:void(0);" class="icon" onclick="menuOnAndOff()">
                 <i class="fa fa-bars"></i>
             </a></li>
@@ -68,73 +68,73 @@ window.dataLayer = window.dataLayer || [];
         <img src="img/rajastan.png" class="img_SwIndiaTours" alt="SwIndia Tours" width="350"/>
         <ul class="intro">
             <li>
-                <a href="airportpickup_drop.html">
+                <a href="airportpickup_drop.php">
                     <img src="img/airportpickup_drop.png" class="img_airportpickup_drop" alt="Rajasthan" width="300"/>
                     <h2>Airport pickup & drop</h2>
                 </a>
             </li>
             <li>
-                <a href="delhi.html">
+                <a href="delhi.php">
                     <img src="img/delhi.png" class="img_delhi" alt="Delhi" width="300"/>
                     <h2>Delhi</h2>
                 </a>
             </li>
             <li>
-                <a href="punjab.html">
+                <a href="punjab.php">
                     <img src="img/panjab.png" class="img_panjab" alt="Punjab" width="300"/>
                     <h2>Punjab</h2>
                 </a>
             </li>
             <li>
-                <a href="rajasthan.html">
+                <a href="rajasthan.php">
                     <img src="img/rajastan.png" class="img_pizza" alt="Rajasthan" width="300"/>
                     <h2>Rajasthan</h2>
                 </a>
             </li>
             <li>
-                <a href="uttarpradesh.html">
+                <a href="uttarpradesh.php">
                     <img src="img/agra.png" class="img_uttarpradesh" alt="Uttarpradesh" width="300"/>
                     <h2>Uttarpradesh</h2>
                 </a>
             </li>
             <li>
-                <a href="mix.html">
+                <a href="mix.php">
                     <img src="img/rajastan.png" class="img_mix" alt="Mix_Tours" width="300"/>
                     <h2>Mix Tours</h2>
                 </a>
             </li>
             <li>
-                <a href="uttarkand.html">
+                <a href="uttarkand.php">
                     <img src="img/haridwar.png" class="img_uttarkand" alt="Uttarkand" width="300"/>
                     <h2>Uttarkand</h2>
                 </a>
             </li>
             <li>
-                <a href="kashmir.html">
+                <a href="kashmir.php">
                     <img src="img/kashmir.png" class="img_kashmir" alt="Kashmir" width="300"/>
                     <h2>Kashmir</h2>
                 </a>
             </li>
             <li>
-                <a href="himalayas.html">
+                <a href="himalayas.php">
                     <img src="img/shimla.png" class="img_himalayas" alt="Himalayas" width="300"/>
                     <h2>Himalayas</h2>
                 </a>
             </li>
             <li>
-                <a href="madhyapradesh.html">
+                <a href="madhyapradesh.php">
                     <img src="img/khajuraho.png" class="img_madhyapradesh" alt="Madhyapradesh" width="300"/>
                     <h2>Madhyapradesh</h2>
                 </a>
             </li>
             <li>
-                <a href="goa.html">
+                <a href="goa.php">
                     <img src="img/goa.png" class="img_goa" alt="Goa" width="300"/>
                     <h2>Goa</h2>
                 </a>
             </li>
             <li>
-                <a href=outsideIndia.html">
+                <a href=outsideIndia.php">
                     <img src="img/srilanka.png" class="img_srilanka" alt="Outside India" width="300"/>
                     <h2>Outside India</h2>
                 </a>
@@ -153,9 +153,9 @@ window.dataLayer = window.dataLayer || [];
     </div>
     <div>
         <lo>
-            <li><a href="about.html">About SwIndia Tours</a></li>
-            <li><a href="feedback.html">Give us feedback & check customers feedback</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="about.php">About SwIndia Tours</a></li>
+            <li><a href="feedback.php">Give us feedback & check customers feedback</a></li>
+            <li><a href="contact.php">Contact us</a></li>
         </lo>
     </div>
     <div id="quote">

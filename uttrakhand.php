@@ -1,4 +1,9 @@
-<?php include('formtours.php'); ?>
+<?php
+session_start();
+require_once'helpers/security.php';
+$errors=isset($_SESSION['errors'])?$_SESSION['errors']:[];
+$fields=isset($_SESSION['fields'])?$_SESSION['fields']:[];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,22 +42,22 @@
 
 <header>
 
-    <a href="index.html" class="logo">Taxi Services & <br> Tour Bookings</a>
+    <a href="index.php" class="logo">Taxi Services & <br> Tour Bookings</a>
 
     <nav id="topnav">
         <ul>
-            <li><a href="airportpickup_drop.html">Airport pickup & drop</a></li>
-            <li><a href="delhi.html">Delhi</a></li>
-            <li><a href="punjab.html">Punjab</a></li>
-            <li><a href="rajasthan.html">Rajasthan</a></li>
-            <li><a href="uttarpradesh.html">Uttarpradesh</a></li>
-            <li><a href="mix.html">Mix Tours</a></li>
-            <li><a href="uttrakhand.html">Uttarkhand</a></li>
-            <li><a href="kashmir.html">Kashmir</a></li>
-            <li><a href="himalayas.html">Himalayas</a></li>
-            <li><a href="madhyapradesh.html">Madhyapradesh</a></li>
-            <li><a href="goa.html">Goa</a></li>
-            <li><a href="outsideIndia.html">Outside India</a></li>
+            <li><a href="airportpickup_drop.php">Airport pickup & drop</a></li>
+            <li><a href="delhi.php">Delhi</a></li>
+            <li><a href="punjab.php">Punjab</a></li>
+            <li><a href="rajasthan.php">Rajasthan</a></li>
+            <li><a href="uttarpradesh.php">Uttarpradesh</a></li>
+            <li><a href="mix.php">Mix Tours</a></li>
+            <li><a href="uttrakhand.php">Uttarkhand</a></li>
+            <li><a href="kashmir.php">Kashmir</a></li>
+            <li><a href="himalayas.php">Himalayas</a></li>
+            <li><a href="madhyapradesh.php">Madhyapradesh</a></li>
+            <li><a href="goa.php">Goa</a></li>
+            <li><a href="outsideIndia.php">Outside India</a></li>
             <li><a href="javascript:void(0);" class="icon" onclick="menuOnAndOff()">
                     <i class="fa fa-bars"></i>
                 </a></li>
@@ -60,47 +65,60 @@
     </nav>
 </header>
 <main>
+    <div class="panel">
+        <?php if(!empty($errors)):?>
+            <div class="error">
+                <ul><li><?php echo implode('</li> <li>', $errors)?></li></ul>
+            </div>
+        <?php endif; ?>
+    </div>
     <div id="message"></div>
     <h1>Uttrakhand</h1>
     <ul class="article">
         <li>
         <li>
-            <form action="https://formsubmit.co/info@swindiatours.com" method="POST">
-                <label style="font-size: 1.5em">Please enter your contact information</label>
-                <div id="message-view"></div>
-                <label for="name">Your name</label>
-                <input name="name" id="name" required>
-                <div id="message-name"></div>
-                <label for="mobile">mobile</label>
-                <input type="tel" id="mobile" name="mobile" placeholder="+91-98-992-933-13-8"
-                       pattern="[\+]\d{1,2}[\(]\d{2,3}[\)]\d{2,3,4,5,6}[\-]\d{1,2,3,4,5,6}" required>
-                <div id="message-mobile"></div>
-                <label for="email">Your e-mail address</label>
-                <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" required>
-                <div id="message-email"></div>
-                <label for="demand">please submit your demand to get a proper offer</label>
-                <div>
-                    <select name="options" id="options" size="13" multiple required>
-                        <option value="Haridwar">Haridwar</option>
-                        <option value="Rishikesh">Rishikesh</option>
-                        <option value="Char Dham Yatra">Char Dham Yatra</option>
-                        <option value="Badrinath Temple, Auli">Badrinath Temple, Auli village</option>
-                        <option value="Kedarnath temple">Kedarnath Temple</option>
-                        <option value="Gangotri">Gangotri</option>
-                        <option value="Yamnotri">Yamnotri</option>
-                        <option value="Dehradun">Dehradun</option>
-                        <option value="Sehastra Dhara">Sehastra Dhara</option>
-                        <option value="Mansoori">Mansoori</option>
-                        <option value="Dhanaulti">Dhanaulti</option>
-                        <option value="Nainital, Ranikhet, Kausani">Nainital, Ranikhet, Kausani</option>
-                        <option value="Almoda">Almoda</option>
-                    </select>
-                    <p class="price">price depend on the request</p>
-                </div>
-                <textarea cols="50" id="demand" name="demand" required></textarea>
-                <div id="message-demand"></div>
-                <input onclick="order" type="submit" value="Send-request" id="submitDemand">
-                <div id="message-submit"></div>
+            <form action="formcontact.php" method="post">
+                <fieldset id="contact">
+                    <label style="font-size: 1.5em">Please enter your contact information</label>
+                    <fieldset>
+                        <label for="name" tabindex="1">Your Name *</label>
+                        <input type="text" name="name" autocomplete="off" tabindex="1" placeholder="Enter Name" <?php echo isset ($fields['name'])? 'value="'.e($fields['name']).'"':''?>>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email" tabindex="2">Your Email address * </label>
+                        <input type="email" name="email" autocomplete="off" tabindex="2" placeholder="Enter Email"<?php echo isset ($fields['email'])? 'value="'.e($fields['email']).'"':''?>>
+                    </fieldset>
+                    <fieldset>
+                        <label for="tel" tabindex="3">Your Mobile No. * </label>
+                        <input type="tel" name="tel" autocomplete="off" tabindex="3"  placeholder="Enter Mobile No."<?php echo isset ($fields['tel'])? 'value="'.e($fields['tel']).'"':''?>>
+                    </fieldset>
+                    <fieldset>
+                        <label for="options" tabindex="4">please submit your demand to get a proper offer</label>
+                        <div>
+                            <select name="options[]" id="options" size="13" multiple>
+                                <option value="Haridwar">Haridwar</option>
+                                <option value="Rishikesh">Rishikesh</option>
+                                <option value="Char Dham Yatra">Char Dham Yatra</option>
+                                <option value="Badrinath Temple, Auli">Badrinath Temple, Auli village</option>
+                                <option value="Kedarnath temple">Kedarnath Temple</option>
+                                <option value="Gangotri">Gangotri</option>
+                                <option value="Yamnotri">Yamnotri</option>
+                                <option value="Dehradun">Dehradun</option>
+                                <option value="Sehastra Dhara">Sehastra Dhara</option>
+                                <option value="Mansoori">Mansoori</option>
+                                <option value="Dhanaulti">Dhanaulti</option>
+                                <option value="Nainital, Ranikhet, Kausani">Nainital, Ranikhet, Kausani</option>
+                                <option value="Almoda">Almoda</option>
+                            </select>
+                            <p class="price">price depend on the request</p>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <label for="message" >Your Message *</label>
+                        <textarea tabindex="5" rows="8" id="comment" name="message"<?php echo isset ($fields['message'])? e($fields['message']):''?>></textarea>
+                        <button name="submit" type="submit" id="contact-submit"  class="btn btn-primary">Submit</button>
+                    </fieldset>
+                </fieldset>
             </form>
         </li>
         <li>
@@ -196,9 +214,9 @@
     </div>
     <div>
         <lo>
-            <li><a href="about.html">About SwIndia Tours</a></li>
-            <li><a href="feedback.html">Give us feedback & check customers feedback</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="about.php">About SwIndia Tours</a></li>
+            <li><a href="feedback.php">Give us feedback & check customers feedback</a></li>
+            <li><a href="contact.php">Contact us</a></li>
         </lo>
     </div>
     <div id="quote">
@@ -225,3 +243,7 @@
 <script src="js/ajax.js"></script>
 </body>
 </html>
+<?php
+unset($_SESSION['errors']);
+unset($_SESSION['fields']);
+?>

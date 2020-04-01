@@ -1,4 +1,9 @@
-<?php include('contactform.php'); ?>
+<?php
+session_start();
+require_once'helpers/security.php';
+$errors=isset($_SESSION['errors'])?$_SESSION['errors']:[];
+$fields=isset($_SESSION['fields'])?$_SESSION['fields']:[];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,22 +42,22 @@
 
 <header>
 
-    <a href="index.html" class="logo">Taxi Services & <br> Tour Bookings</a>
+    <a href="index.php" class="logo">Taxi Services & <br> Tour Bookings</a>
 
     <nav id="topnav">
         <ul>
-            <li><a href="airportpickup_drop.html">Airport pickup & drop</a></li>
-            <li><a href="delhi.html">Delhi</a></li>
-            <li><a href="punjab.html">Punjab</a></li>
-            <li><a href="rajasthan.html">Rajasthan</a></li>
-            <li><a href="uttarpradesh.html">Uttarpradesh</a></li>
-            <li><a href="mix.html">Mix Tours</a></li>
-            <li><a href="uttrakhand.html">Uttarkhand</a></li>
-            <li><a href="kashmir.html">Kashmir</a></li>
-            <li><a href="himalayas.html">Himalayas</a></li>
-            <li><a href="madhyapradesh.html">Madhyapradesh</a></li>
-            <li><a href="goa.html">Goa</a></li>
-            <li><a href="outsideIndia.html">Outside India</a></li>
+            <li><a href="airportpickup_drop.php">Airport pickup & drop</a></li>
+            <li><a href="delhi.php">Delhi</a></li>
+            <li><a href="punjab.php">Punjab</a></li>
+            <li><a href="rajasthan.php">Rajasthan</a></li>
+            <li><a href="uttarpradesh.php">Uttarpradesh</a></li>
+            <li><a href="mix.php">Mix Tours</a></li>
+            <li><a href="uttrakhand.php">Uttarkhand</a></li>
+            <li><a href="kashmir.php">Kashmir</a></li>
+            <li><a href="himalayas.php">Himalayas</a></li>
+            <li><a href="madhyapradesh.php">Madhyapradesh</a></li>
+            <li><a href="goa.php">Goa</a></li>
+            <li><a href="outsideIndia.php">Outside India</a></li>
             <li><a href="javascript:void(0);" class="icon" onclick="menuOnAndOff()">
                 <i class="fa fa-bars"></i>
             </a></li>
@@ -62,31 +67,47 @@
 <div id="message"></div>
 <main>
     <h1>Do you have any questions or do you need any assistance, we are happy to help</h1>
-    <div class="container">
-        <form id="contact" action="<?=$_SERVER['PHP_SELF'];?>" method="post">
+        <div class="container">
+                <div class="panel">
+                    <?php if(!empty($errors)):?>
+                    <div class="error">
+                        <ul><li><?php echo implode('</li> <li>', $errors)?></li></ul>
+                    </div>
+                <?php endif; ?>
+                </div>
+        <form action="formcontact.php" method="post">
+            <div id="contact">
             <h4>Contact us today, and get reply with in 24 hours!</h4>
             <fieldset>
-                <input placeholder="Your name" type="text" name="name" tabindex="1" value="<?= $name ?>" autofocus>
-                <span class="error"><?= $name_error ?></span>
+                <label for="name" tabindex="1">Your Name *</label>
+                <input type="text" name="name" autocomplete="off" tabindex="1" placeholder="Enter Name" <?php echo isset ($fields['name'])? 'value="'.e($fields['name']).'"':''?>>
             </fieldset>
             <fieldset>
-                <input placeholder="Your Email Address" type="email" name="email" value="<?= $email ?>" tabindex="2" >
-                <span class="error"><?= $email_error ?></span>
+                <label for="email" tabindex="2">Your Email address * </label>
+                <input type="email" name="email" autocomplete="off" tabindex="2" placeholder="Enter Email"<?php echo isset ($fields['email'])? 'value="'.e($fields['email']).'"':''?>>
             </fieldset>
             <fieldset>
-                <input placeholder="Your Phone Number" type="tel" name="phone" value="<?= $phone ?>" tabindex="3" >
-                <span class="error"><?= $phone_error ?></span>
+                <label for="tel" tabindex="3">Your Mobile No. * </label>
+                <input type="tel" name="tel" autocomplete="off" tabindex="3"  placeholder="Enter Mobile No."<?php echo isset ($fields['tel'])? 'value="'.e($fields['tel']).'"':''?>>
             </fieldset>
+                <fieldset>
+                    <label for="options" tabindex="4"></label>
+                    <div>
+                        <select name="options[]" id="options" size="3" multiple>
+                            <option value="request">Request</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                </fieldset>
             <fieldset>
-                <textarea placeholder="Type your Message Here...." name="message" tabindex="5"
-                          value="<?= $message ?>"></textarea>
+                <label for="message" >Your Message *</label>
+                <textarea tabindex="5" rows="8" id="comment" name="message"<?php echo isset ($fields['message'])? e($fields['message']):''?>></textarea>
+                <button name="submit" type="submit" id="contact-submit"  class="btn btn-primary">Submit</button>
             </fieldset>
-            <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-            </fieldset>
-            <div class ="success"><?= $success ?></div>
+            </div>
         </form>
-    </div>
+        </div>
 </main>
 <footer>
     <div id="opening-hours">
@@ -98,9 +119,9 @@
     </div>
     <div>
         <lo>
-            <li><a href="about.html">About SwIndia Tours</a></li>
-            <li><a href="feedback.html">Give us feedback & check customers feedback</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="about.php">About SwIndia Tours</a></li>
+            <li><a href="feedback.php">Give us feedback & check customers feedback</a></li>
+            <li><a href="contact.php">Contact us</a></li>
         </lo>
     </div>
     <div id="quote">
@@ -125,5 +146,12 @@
 </footer>
 <script src="js/bookings.js"></script>
 <script src="js/ajax.js"></script>
+<script src="js/boot.js"></script>
+<script src="js/form.js"></script>
 </body>
 </html>
+
+<?php
+unset($_SESSION['errors']);
+unset($_SESSION['fields']);
+?>

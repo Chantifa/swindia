@@ -38,22 +38,22 @@
 
 <header>
 
-    <a href="index.html" class="logo">Taxi Services & <br> Tour Bookings</a>
+    <a href="index.php" class="logo">Taxi Services & <br> Tour Bookings</a>
 
     <nav id="topnav">
         <ul>
-            <li><a href="airportpickup_drop.html">Airport pickup & drop</a></li>
-            <li><a href="delhi.html">Delhi</a></li>
-            <li><a href="punjab.html">Punjab</a></li>
-            <li><a href="rajasthan.html">Rajasthan</a></li>
-            <li><a href="uttarpradesh.html">Uttarpradesh</a></li>
-            <li><a href="mix.html">Mix Tours</a></li>
-            <li><a href="uttrakhand.html">Uttarkhand</a></li>
-            <li><a href="kashmir.html">Kashmir</a></li>
-            <li><a href="himalayas.html">Himalayas</a></li>
-            <li><a href="madhyapradesh.html">Madhyapradesh</a></li>
-            <li><a href="goa.html">Goa</a></li>
-            <li><a href="outsideIndia.html">Outside India</a></li>
+            <li><a href="airportpickup_drop.php">Airport pickup & drop</a></li>
+            <li><a href="delhi.php">Delhi</a></li>
+            <li><a href="punjab.php">Punjab</a></li>
+            <li><a href="rajasthan.php">Rajasthan</a></li>
+            <li><a href="uttarpradesh.php">Uttarpradesh</a></li>
+            <li><a href="mix.php">Mix Tours</a></li>
+            <li><a href="uttrakhand.php">Uttarkhand</a></li>
+            <li><a href="kashmir.php">Kashmir</a></li>
+            <li><a href="himalayas.php">Himalayas</a></li>
+            <li><a href="madhyapradesh.php">Madhyapradesh</a></li>
+            <li><a href="goa.php">Goa</a></li>
+            <li><a href="outsideIndia.php">Outside India</a></li>
             <li><a href="javascript:void(0);" class="icon" onclick="menuOnAndOff()">
                     <i class="fa fa-bars"></i>
                 </a></li>
@@ -63,7 +63,7 @@
 
 <main>
     <div id="message"></div>
-    <h1>Thank you for your order!</h1>
+    <h1>Thank you for your your request!</h1>
     <ul id="thankyou"></ul>
     <h2>we will contact you asap within 24 hours</h2>
 </main>
@@ -77,9 +77,9 @@
     </div>
     <div>
         <lo>
-            <li><a href="about.html">About SwIndia Tours</a></li>
-            <li><a href="feedback.html">Give us feedback & check customers feedback</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="about.php">About SwIndia Tours</a></li>
+            <li><a href="feedback.php">Give us feedback & check customers feedback</a></li>
+            <li><a href="contact.php">Contact us</a></li>
         </lo>
     </div>
     <div id="quote">

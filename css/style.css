@@ -17,6 +17,64 @@ body {
     font-size: 14px;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+    color: #fff;
+    background-color: #286090;
+    border-color: #122b40;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+    color: #fff;
+    background-color: #204d74;
+    border-color: #122b40;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn-primary .badge {
+    color: #337ab7;
+    background-color: #fff;
+}
+
 h1,
 h2,
 h3,
@@ -29,8 +87,8 @@ h6 {
 div ul li {
         font-size:1em;
          list-style: none;
-         float: center;
-         position: inherent;
+         float: inherit;
+         position: center;
          margin: 12px 50px 50px;
 }
 blockquote {
@@ -179,8 +237,8 @@ nav .icon {
 
 /*about*/
 #about div . {
-        float: center;
-         position: inherent;
+        float: start;
+         position: center;
          margin: 12px 50px 50px;
 
 }
@@ -320,9 +378,120 @@ ul.article small {
     padding-bottom: 2em;
 }
 
+/*********************
+article-airport
+
+*******************/
+
+ul.article-airport {
+    display: grid;
+
+    /***********************
+      Umso fauler, umso besser. Statt '1fr 1fr 1fr 1fr' zu schreiben, kann man auch die 'repeat()' Funktion vo CSS verwenden.
+    ***********************/
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.article-airport li {
+    width: 300px;
+}
+
+/***********************
+  Ich hab hier mal eine Grösse für die Bilder definiert. Die Überschreiben die Grösse der Bilder im HTML. Da 300 x 300 Pixel quadratisch ist, aber nicht alle Bilder quadratisch sind, werden sie verzogen.
+
+  Entweder bearbeiten wir alle Bilder, dass sie quadratisch sind oder wir finden eine andere Lösung.
+***********************/
+
+ul.article-airport li img {
+    height: 300px;
+    width: 300px;
+}
+
+ul.article-airport li h2 {
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+ul.article-airport li a img {
+    height: 25px;
+    width: 25px;
+}
+
+div ul.article-airport li img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+ul.article-airport div {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+ul.article-airport div div .request-offer {
+    flex-grow: 3;
+    text-align: right;
+}
+
+ul.article-airport div .price {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+ul.article-airport small {
+    display: block;
+    padding-bottom: 2em;
+}
 /*************************
 Article mix tours
  */
+
+/***
+Article mix tours
+*/
+
+ul.article-mix {
+    display: grid;
+
+    /***********************
+      Umso fauler, umso besser. Statt '1fr 1fr 1fr 1fr' zu schreiben, kann man auch die 'repeat()' Funktion vo CSS verwenden.
+    ***********************/
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.article-mix li {
+    width: 300px;
+}
+
+/***********************
+  Ich hab hier mal eine Grösse für die Bilder definiert. Die Überschreiben die Grösse der Bilder im HTML. Da 300 x 300 Pixel quadratisch ist, aber nicht alle Bilder quadratisch sind, werden sie verzogen.
+
+  Entweder bearbeiten wir alle Bilder, dass sie quadratisch sind oder wir finden eine andere Lösung.
+***********************/
+
+ul.article-mix li img {
+    height: 300px;
+    width: 300px;
+}
+
+ul.article-mix li h2 {
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
 ul.article-mix {
     display: grid;
 
@@ -540,7 +709,7 @@ ul.article-madhyapradesh small {
 
 .form form {
     display: grid;
-    grid-template-columns: 3fr 3fr;
+    grid-template-columns: 4fr 4fr;
     grid-gap: .5em 1em;
 }
 
@@ -683,6 +852,7 @@ footer h3 {
 #contact input[type="text"],
 #contact input[type="email"],
 #contact input[type="tel"],
+#contact input[type="options"],
 #contact textarea,
 #contact button[type="submit"] {
  font:600 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
@@ -694,13 +864,14 @@ footer h3 {
 }
 
 #contact h3 {
-	color: #F96;
+	color: #000000;
 	display: block;
 	font-size: 30px;
 	font-weight: 400;
 }
 
 #contact h4 {
+    color: #000000;
 	margin:5px 0 15px;
 	display:block;
 	font-size:13px;
@@ -714,7 +885,7 @@ fieldset {
 	width: 100%;
 }
 
-#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact input[type="options"], #contact textarea {
 	width:100%;
 	border:1px solid #CCC;
 	background:#FFF;
@@ -725,7 +896,7 @@ fieldset {
 #contact input[type="text"]:hover,
 #contact input[type="email"]:hover,
 #contact input[type="tel"]:hover,
-#contact input[type="url"]:hover,
+#contact input[type="options"]:hover,
 #contact textarea:hover {
 	-webkit-transition:border-color 0.3s ease-in-out;
 	-moz-transition:border-color 0.3s ease-in-out;
@@ -774,4 +945,70 @@ fieldset {
 }
 :-ms-input-placeholder {
  color:#888;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.form-control::-moz-placeholder {
+    color: #999;
+    opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+    color: #999;
+}
+.form-control::-webkit-input-placeholder {
+    color: #999;
+}
+.form-control::-ms-expand {
+    background-color: transparent;
+    border: 0;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+    background-color: #eee;
+    opacity: 1;
+}
+.form-control[disabled],
+fieldset[disabled] .form-control {
+    cursor: not-allowed;
+}
+textarea.form-control {
+    height: auto;
+}
+input[type="search"] {
+    -webkit-appearance: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="date"].form-control,
+    input[type="time"].form-control,
+    input[type="datetime-local"].form-control,
+    input[type="month"].form-control {
+        line-height: 34px;
+    }
+}
+.form-group {
+    margin-bottom: 15px;
 }
