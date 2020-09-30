@@ -1,0 +1,10 @@
+version: '2'
+services:
+  webserver:
+    image: phapstrom/php-71-appache-xdebug-26
+    ports:
+      - "80:80"
+    volumes:
+    - ./:/var/www/html
+    environment:
+      XDEBUB_CONFIG: remote_host=host.docker.internal

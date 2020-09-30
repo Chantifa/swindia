@@ -63,7 +63,7 @@
 
 <main>
     <div id="message"></div>
-    <h1>Thank you for your your request!</h1>
+    <h1>Thank you for your request!</h1>
     <ul id="thankyou"></ul>
     <h2>we will contact you asap within 24 hours</h2>
 </main>
