@@ -23,9 +23,10 @@ if (isset($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['options'],  $_
         $m = new PHPMailer;
         $m->isSMTP();
         $m->SMTPAuth = true;
+        //smtpout.secureserver.net
         $m->Host = 'smtpout.asia.secureserver.net';
         $m->Username = 'info@swindiatours.com';//replace with your email address
-        $m->Password = 'B4harat..';//replace with your password
+        $m->Password = 'CHAchi420';//replace with your password
         //$m->SMTPSecure = 'ssl';
         $m->Port = 80;
 

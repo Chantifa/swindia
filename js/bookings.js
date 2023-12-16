@@ -1,27 +1,28 @@
 
 
-/*
-Phone number verfication code
-*/
-@import phoneUtil
+function verifyInternationalPhoneNumber() {
+    const phoneNumber = document.getElementById('tel')
+    // Regular expressions for common international phone number formats
+    const regexArray = [
+        /^\+\d{1,3}\s?\d{1,14}$/g,      // Format: +123 45678901234
+        /^\d{6,14}$/g                    // Format: 12345678901234
+    ];
 
-var phoneUtil = require('google-libphonenumber').phoneUtil;
-var tel = phoneUtil.parse('+12024561111');
-var phoneUtil = require('google-libphonenumber').phoneUtil
-        , PNF = require('google-libphonenumber').PhoneNumberFormat
-        , PNT = require('google-libphonenumber').PhoneNumberType;
-var tel = phoneUtil.parse('(0) 20 7925 0918', 'GB');
-console.log(phoneUtil.format(tel, PNF.INTERNATIONAL));
-console.log(phoneUtil.format(tel, PNF.NATIONAL));
-console.log(phoneUtil.format(tel, PNF.E164));
+    for (const regex of regexArray) {
+        if (regex.test(phoneNumber)) {
+            console.log('International phone number is valid:', phoneNumber);
+            return true;
+        }
+    }
 
-console.log(phoneUtil.isValidNumber(phoneUtil.parse('(0) 20 7925 0918', 'GB')));
-// => outputs true
+    console.log('Invalid international phone number:', phoneNumber);
+    return false;
+}
 
+// Example usage:
+const internationalPhoneNumber = '+44 20 7930 3000'; // Buckingham Palace in the United Kingdom
 
-
-
-// https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
+verifyInternationalPhoneNumber(internationalPhoneNumber);
 function menuOnAndOff() {
     var x = document.getElementById('topnav');
     if (x.className === 'responsive') {
@@ -133,7 +134,7 @@ function validateOptions(){
 }
 
 // Submit button wird per default deaktiviert.
-var submit = document.getElementsById('submitDemand');
+var submit = document.getElementsById('submit');
 submit.disabled = true;
 
 // Alle Felder werden nacheinander validiert und dann entsprechend der submit button aktiviert (oder deaktiviert)
@@ -142,6 +143,7 @@ function validateForm() {
 
     validateName();
     validateEmail();
+    verifyInternationalPhoneNumber();
     validateDemand();
     validateOptions();
 
@@ -154,7 +156,7 @@ function validateForm() {
 }
 
 // Alle input und textarea Felder erhalten je einen "Listener" auf keyup (Tastatur loslassen) und change (wenn sich was ändert)
-var inputFields = document.querySelectorAll('input, textarea');
+const inputFields = document.querySelectorAll('input, textarea');
 inputFields.forEach(function (element) {
     element.addEventListener('change', validateForm);
     element.addEventListener('keyup', validateForm);
