@@ -135,8 +135,7 @@ Copyright Ⓒ 2019 SwIndia Tours. All Right Reserved
 </div>
 </footer>
 <script src="js/bookings.js"></script>
-<script src="js/ajax.js"></script>
-<script src="js/form_validator.js"></script>
+<script src="js/form.js"></script>
 </body>
 </html>
 

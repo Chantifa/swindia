@@ -9,30 +9,8 @@ $fields=isset($_SESSION['fields'])?$_SESSION['fields']:[];
 <head>
     <meta charset="UTF-8">
     <title>SwIndia Tours – Taxi Services and Tour Bookings</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29354477-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-29354477-2', { 'optimize_id': 'GTM-NVK5K9R'});
-    </script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34038602-2"></script>
-    <!-- Google AdSense wurde hier hinzugefügt-->
-    <script data-ad-client="ca-pub-1468017671046742" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34038602-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-34038602-2');
-    </script>
 
 </head>
 <body>
@@ -82,15 +60,18 @@ $fields=isset($_SESSION['fields'])?$_SESSION['fields']:[];
                     <label style="font-size: 1.5em">Please enter your contact information</label>
                     <fieldset>
                         <label for="name" tabindex="1">Your Name *</label>
-                        <input type="text" name="name" autocomplete="off" tabindex="1" placeholder="Enter Name" <?php echo isset ($fields['name'])? 'value="'.e($fields['name']).'"':''?>>
+                        <input id="name" type="text" name="name" autocomplete="off" tabindex="1" placeholder="Enter Name" <?php echo isset ($fields['name'])? 'value="'.e($fields['name']).'"':''?>>
+                        <div id="message-name"></div>
                     </fieldset>
                     <fieldset>
                         <label for="email" tabindex="2">Your Email address * </label>
-                        <input type="email" name="email" autocomplete="off" tabindex="2" placeholder="Enter Email"<?php echo isset ($fields['email'])? 'value="'.e($fields['email']).'"':''?>>
+                        <input id="email" type="email" name="email" autocomplete="off" tabindex="2" placeholder="Enter Email"<?php echo isset ($fields['email'])? 'value="'.e($fields['email']).'"':''?>>
+                        <div id="message-email"></div>
                     </fieldset>
                     <fieldset>
-                        <label for="tel" tabindex="3">Your Mobile No. * </label>
-                        <input type="tel" name="tel" autocomplete="off" tabindex="3"  placeholder="Enter Mobile No."<?php echo isset ($fields['tel'])? 'value="'.e($fields['tel']).'"':''?>>
+                        <label for="tel-message" tabindex="3">Your Mobile No. * </label>
+                        <input id=tel type="tel" name="tel" autocomplete="off" tabindex="3"  placeholder="Enter Mobile No."<?php echo isset ($fields['tel'])? 'value="'.e($fields['tel']).'"':''?>>
+                        <div id="tel-message"></div>
                     </fieldset>
                     <fieldset>
                         <label for="options" tabindex="4">please submit your demand to get a proper offer</label>
@@ -107,7 +88,8 @@ $fields=isset($_SESSION['fields'])?$_SESSION['fields']:[];
                     <fieldset>
                         <label for="message" >Your Message *</label>
                         <textarea tabindex="5" rows="8" id="comment" name="message"<?php echo isset ($fields['message'])? e($fields['message']):''?>></textarea>
-                        <button name="submit" type="submit" id="contact-submit"  class="btn btn-primary">Submit</button>
+                        <div id="message-demand"></div>
+                        <button for="submit" name="submit" type="submit" id="contactSubmit"  class="btn btn-primary">Submit</button>
                     </fieldset>
                 </fieldset>
             </form>
@@ -202,7 +184,7 @@ $fields=isset($_SESSION['fields'])?$_SESSION['fields']:[];
     </div>
 </footer>
 <script src="js/bookings.js"></script>
-<script src="js/ajax.js"></script>
+<script src="js/form.js"></script>
 </body>
 </html>
 <?php

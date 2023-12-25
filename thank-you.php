@@ -4,42 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>SwIndia Tours – Taxi Services and Tour Bookings</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29354477-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-29354477-2', { 'optimize_id': 'GTM-NVK5K9R'});
-    </script>
     <script src="jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34038602-2"></script>
-    <!-- Google AdSense wurde hier hinzugefügt-->
-    <script data-ad-client="ca-pub-1468017671046742" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34038602-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-34038602-2');
-    </script>
-
 </head>
 
 <body>
-
 <div id="topbar">  <img src="img/logo.png" class="img_logo" alt="SwIndiaTours" width="300" /></div>
-
 <header>
-
     <a href="index.php" class="logo">Taxi Services & <br> Tour Bookings</a>
-
     <nav id="topnav">
         <ul>
             <li><a href="airportpickup_drop.php">Airport pickup & drop</a></li>
@@ -103,7 +76,7 @@
     </div>
 </footer>
 <script src="js/bookings.js"></script>
-<script src="js/ajax.js"></script>
+<script src="js/form.js"></script>
 </body>
 </html>
 
