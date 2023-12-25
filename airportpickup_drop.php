@@ -6,7 +6,7 @@ $fields=isset($_SESSION['fields'])?$_SESSION['fields']:[];
 ?>
     <!DOCTYPE html>
     <html lang="en">
-    <<head>
+    <head>
         <meta charset="UTF-8">
         <title>SwIndia Tours – Taxi Services and Tour Bookings</title>
 

@@ -4,12 +4,16 @@ require_once'helpers/security.php';
 $errors=isset($_SESSION['errors'])?$_SESSION['errors']:[];
 $fields=isset($_SESSION['fields'])?$_SESSION['fields']:[];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SwIndia Tours – Taxi Services and Tour Bookings</title>
-</head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SwIndia Tours – Taxi Services and Tour Bookings</title>
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    </head>
 
 <body>
 
