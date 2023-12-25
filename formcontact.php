@@ -44,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host       = 'smtpout.secureserver.net';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'info@swindiatours.com'; // Replace with your GoDaddy email address
-            $mail->Password   = 'CHAchi420';    // Replace with your GoDaddy email password
+            $mail->Username   = ''; // Replace with your GoDaddy email address
+            $mail->Password   = '';    // Replace with your GoDaddy email password
             $mail->SMTPSecure = ''; // Use 'ssl' for SSL connection
             $mail->Port       = 25; // Port for SSL connection 465
 
