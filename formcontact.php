@@ -1,51 +1,75 @@
 <?php
-session_start();
-require_once 'libs/phpmailer/PHPMailerAutoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Include PHPMailer classes directly
+require 'libs/PHPMailer/PHPMailer/src/PHPMailer.php';
+require 'libs/PHPMailer/PHPMailer/src/Exception.php';
+require 'libs/PHPMailer/PHPMailer/src/SMTP.php';
 
 $errors = [];
+$fields = [];
 
-if (isset($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['options'],  $_POST['message'])) {
-    $fields = [
-        'name' => $_POST['name'],
-        'tel' => $_POST['tel'],
-        'email' => $_POST['email'],
-        'message' => $_POST['message'],
-    ];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and validate form data
+    $name = sanitizeInput($_POST['name']);
+    $email = sanitizeInput($_POST['email']);
+    $tel = sanitizeInput($_POST['tel']);
+    $options = isset($_POST['options']) ? implode(', ', $_POST['options']) : '';
+    $message = sanitizeInput($_POST['message']);
 
-    $option = Trim(stripslashes(implode(",", $_POST['options'])));
-
-    foreach ($fields as $field => $data) {
-        if (empty($data)) {
-            $errors[] = 'The ' . $field . ' field is required.';
-        }
+    // Validate required fields
+    if (empty($name) || empty($email) || empty($tel) || empty($message)) {
+        $errors[] = 'All fields are required.';
     }
+
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Invalid email format.';
+    }
+
+    // If no errors, proceed with sending email
     if (empty($errors)) {
-        $m = new PHPMailer;
-        $m->isSMTP();
-        $m->SMTPAuth = true;
-        //smtpout.secureserver.net
-        $m->Host = 'smtpout.asia.secureserver.net';
-        $m->Username = 'info@swindiatours.com';//replace with your email address
-        $m->Password = 'CHAchi420';//replace with your password
-        //$m->SMTPSecure = 'ssl';
-        $m->Port = 80;
+        // Create a new PHPMailer instance
+        $mail = new PHPMailer(true); // Passing true enables exceptions
 
-        $m->isHTML();
-        $m->Subject = 'Contact form Submitted';
-        $m->Body='From:' .$fields['name'].' ( ' .$fields['email'].').(' .$fields['tel'].')<p>'.$option.'</p><p>'.$fields['message'].'</p>';
+        try {
+            // Enable debugging output
+            $mail->SMTPDebug = 2; // 2 for detailed debugging output
+            $mail->Debugoutput = function ($str, $level) {
+                echo "DEBUG: $str\n";
+            };
 
-        $m->FromName = 'SwIndiaTours';
-        $m->AddAddress('info@swindiatours.com', 'SwIndiaTours');
-        if ($m->send()) {
-            header('Location:thank-you.php');
-            die();
-        } else {
-            $errors[] = "Sorry ,Could not send email.Try again later.";
+            // Server settings (replace with your GoDaddy SMTP settings)
+            $mail->isSMTP();
+            $mail->Host       = 'smtpout.secureserver.net';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'info@swindiatours.com'; // Replace with your GoDaddy email address
+            $mail->Password   = 'CHAchi420';    // Replace with your GoDaddy email password
+            $mail->SMTPSecure = ''; // Use 'ssl' for SSL connection
+            $mail->Port       = 25; // Port for SSL connection 465
+
+            // Sender and recipient settings
+            $mail->setFrom($email, $name);
+            $mail->addAddress('info@swindiatours.com', 'SwIndiaTours'); // Replace with recipient information
+
+            // Email content
+            $mail->isHTML(true);
+            $mail->Subject = 'Form Submission - Airport Pickup & Drop';
+            $mail->Body    = "Name: $name<br>Email: $email<br>Mobile No.: $tel<br>Options: $options<br>Message: $message";
+
+            // Send the email
+            $mail->send();
+            echo 'Message sent successfully';
+        } catch (Exception $e) {
+            echo "Mailer Error: {$mail->ErrorInfo}";
         }
     }
-} else {
-    $errors[] = 'Something went wrong';
 }
-$_SESSION['errors'] = $errors;
-$_SESSION['fields'] = $fields;
-header('Location:index.php');
+
+// Function to sanitize form input
+function sanitizeInput($input)
+{
+    return htmlspecialchars(trim($input), ENT_QUOTES, 'UTF-8');
+}
+?>
